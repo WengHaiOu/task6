@@ -1,0 +1,331 @@
+*{
+	margin:0px;
+	padding:0px;
+}
+/*css规则从上到下进行编写，在编写过程中很多命名选择了自己喜欢的方式，所以在此一一注释，方便君理解QAQ*/
+/*body两边是灰色背景*/
+body{
+	background-color:#808080;
+}
+/*整个框架的容器，两边的内边距设置为了44px*/
+#container{
+	height:1386px;
+	width:980px;
+	margin-left:auto;
+	margin-right:auto;
+	background-color:white;
+	padding:0 44px 0 44px;
+	box-sizing:border-box;
+}
+/*在设置header宽度时，出现设置完后container左右padding不对称的情况，在对container附加box-sizing属性后，问题解决*/
+/*header的定位设置为relative，便于让后面的文字和时间绝对定位*/
+ header{
+	width:892px;
+	height:61px;
+	border-bottom:2px #938e8c solid;
+	position:relative;
+}
+/*header中的纯色块，采用浮动定位，高度与header相同*/
+ header  .logo{
+	float:left;
+	background-color:#d45d5c;
+	width:110px;
+	height:61px;
+}
+/*纯色块中的文字，采用绝对地位*/
+header .logo  span{
+	font-size:12px;
+	font-family:"黑体";
+	color:#ffffff;
+	position:absolute;
+	left:5px;
+	bottom:0px;
+}
+/*时间采用绝对定位*/
+header span{
+	font-size:12px;
+	color:#d45d5c;
+	font-family:"黑体";
+	position:absolute;
+	bottom:0px;
+	right:0px;
+}
+/*header结束，下面是section1*/
+
+/*拉开与header的上边距*/
+section#intro{
+	margin-top:20px;
+}
+/*图片采用浮动定位，并设置了右外边距*/
+section#intro img{
+	float:left;
+	margin-right:40px;
+}
+/*以下是各种字体的设置*/
+/*先将所有字体归为一个块中，并设置为inline-block，使得与图片同一行显示,这里用float也行*/
+section#intro .word{
+	width:203px;
+	border-top:2px #cc8091 solid;
+    display:inline-block;
+}
+/*About technologe*/
+section#intro .word1{
+	font-size:24px;
+	color:#000000;
+	font-family:"微软雅黑";
+	text-decoration:underline;
+	line-height:40px;
+}
+/*这里将about technologe分为了两个部分，以便进行首字母效果，这里font-size如果用em做单位的话，会导致下划线同时变粗*/
+section#intro .word1:first-letter{
+	font-size:29px;
+}
+/*about technologe下面的小字 */
+section#intro .word2{
+	font-size:12px;
+	color:#676767;
+	font-family:"楷体";
+	line-height:10px;
+}
+/*大大的700，设置字体倾斜后与psd图中倾斜得有所不同QAQ*/
+section#intro .number1{
+	font-size:105px;
+	color:75b86b;
+	font-family:"微软雅黑";
+	font-style:italic;
+}
+/*数字3.2*/
+section#intro .number2{
+	display:inline-block;
+	font-size:55px;
+	color:#cc8091;
+	font-family:"微软雅黑";
+
+}
+/*为了实现数字3.2与旁边文字的效果，把word3和4归为一个div，再将number2和新div改为inline-block*/
+section#intro .word3{
+	font-size:21px;
+	color:#cc8091;
+	font-family:"微软雅黑";
+}
+section#intro .word4{
+	font-size:12px;
+	color:#cc8091;
+	font-family:"微软雅黑";
+}
+section#intro .word34{
+	display:inline-block;
+}
+
+/*至此section1结束，下面是what，when，how的部分，psd图中“what---40% what---30%”的文字我觉得是三排的宽度比，╮(╯▽╰)╭*/
+
+/*块宽度*/
+article#www{
+	width:641px;
+}
+/*下面是很让人蛋疼的部分，虽然把各块设置为了border-box，但似乎并没有什么软用，一设置外边距第三栏就跑下边去了，最终采用浮动，加之改变了内容宽度*/
+/*中间曾经用过绝对定位，但下面的内容定位就比较捉急了，所有最终还是选择了浮动*/
+article#www .what{
+	width:37%;
+    box-sizing:border-box;
+	float:left;
+	margin-right:3%;
+}
+article#www .what h2{
+	font-size:16px;
+	color:#418c59;
+	font-family="微软雅黑";
+	font-weight:bold;
+	text-decoration:underline;
+}
+article#www .what p{
+	font:12px "宋体";
+	line-height:16px;
+	color:#767777;
+}
+article#www .when{
+	width:27%;
+  box-sizing:border-box;
+  float:left;
+  margin-right:3%;
+}
+article#www .when h2{
+	font:16px bold;
+	text-decoration:underline;
+	font-family="微软雅黑";
+	color:#d2994f;
+}
+article#www .when p{
+	font:12px;
+	color:#231815;
+	font-family="微软雅黑";
+	line-height:16px;
+	opacity:0.7;
+}
+article#www .how{
+	width:30%;
+    box-sizing:border-box;
+	float:left;
+}
+article#www .how h2{
+	font:16px bold;
+	text-decoration:underline;
+	color:#cc7680;
+}
+article#www .how p{
+	font:12px "微软雅黑" italic;
+	color:#cd4a48;
+	opacity:0.7;
+	line-height:16px;
+}
+
+/*至此3w的部分结束，下面是第三部分的左边部分*/
+/*这里设置外边距貌似无效，改设内边距*/
+article#technologe{
+	clear:both;
+	padding-top:40px;
+	padding-bottom:40px;
+	border-bottom:1px #938e8c solid;
+	position:relative;
+}
+section#leftSection{
+	width:415px;
+	float:left;
+}
+#leftheader{
+	border-bottom:2px solid;
+	padding-bottom:10px;
+	margin-bottom:10px;
+}
+article#technologe  .THE{
+	font:72px "黑体" bold italic;
+	color:#f5e327;
+}
+article#technologe .TOF{
+	font:42px "黑体" bold;
+	color:#11456b;
+	line-height:16px;
+}
+article#technologe .zhongwen{
+	font:33px "黑体" bold;
+	color:#11456b;
+}
+/*这里为了实现页面中文字环绕效果，将原本的文字分为了两块，又由于首字母效果，将第二段文字归到了span中而没有使用span*/
+#leftSection p{
+	font:12px "宋体";
+	color:#767777;
+	line-height:16px;
+}
+#leftSection  #wenzi span{
+	font:12px "宋体";
+	color:#767777;
+	line-height:16px;
+}
+#leftSection  #wenzi p:first-letter{
+	font:70px "微软雅黑";
+	color:#f5e327;
+	float:left;
+	line-height:70px;
+}
+#leftSection  #wenzi  img{
+	float:right;
+	margin:20px;
+}
+/*下面是右边部分*/
+#rightSection{
+	float:right;
+}
+#rightPhoto{
+	width:458px;
+    height:257px;
+	background-image:url(images/rightPhoto.png);
+	position:relative;
+}
+#photoword{
+	position:absolute;
+	left:50px;
+	bottom:5px;
+	
+}
+#rightPhoto #photoword .qd1{
+	font:26px "微软雅黑";
+	color:#ffffff;
+}
+#rightPhoto #photoword .qd2{
+	font:12px "微软雅黑";
+	font-style:italic;
+	line-height:140%;
+	color:#72b16a;
+}
+
+#mulu{
+	margin-top:20px;
+	width:459px;
+	height:318px;
+	position:relative;
+	background-color:#eeedd6;
+}
+#mulu #red{
+	position:absolute;
+	left:0px;
+	bottom:0px;
+	background-color:#d45d5c;
+	width:260px;
+	height:160px;
+}
+#mulu  #red #word0{
+	font:110px "微软雅黑";
+	color:#ffffff;
+    display:inline-block;
+	vertical-align:middle;
+	margin-left:5px;
+} 
+#mulu #twopar{
+	display:inline-block;
+	vertical-align:middle;
+	padding-left:5px;
+	height:86px;
+	border-left:2px solid white;
+}
+#par1{
+	font:21px "黑体";
+	color:#ffffff;
+	line-height:24px;
+	font-style:italic;
+}
+#par2{
+	font:12px "黑体";
+	color:#ffffff;
+	line-height:10px;
+}
+#check{
+	clear:both;
+}
+ul{
+	list-style:none;
+}
+li:before{
+	content:url(images/tubiao.png);
+}
+ul{
+	margin-top:30px;
+	float:left;
+}
+ul li{
+	margin-bottom:20px;
+	margin-left:30px;
+}
+ul  .ulword{
+	font:16px "宋体";
+	color:#5a5b5b;
+}
+ul .ulword2{
+	font:12px "宋体";
+	color:#5a5b5b;
+	font-style:italic;
+}
+footer p{
+	text-align:right;
+	font:12px "黑体";
+	color:$d45d5c;
+}
